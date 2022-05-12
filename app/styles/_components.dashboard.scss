@@ -30,10 +30,20 @@
 }
 
 .c-filters__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 0 8px;
   padding: 16px 8px;
   border: 1px solid #dcdee3;
-  background-color: #e5e9f1;
+  background-color: #d4eafa;
+
+  .search-btn{
+    color: #fff;
+    background: #0679d1;
+    padding: 10px;
+    border-radius: 5px;
+  }
 }
 
 .c-chart__container {

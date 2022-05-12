@@ -1,3 +1,7 @@
+.highlighted {
+  color: #fff;
+  background: #3F3F3F;
+}
 .c-users-list {
   display: table;
   width: 100%;
@@ -8,7 +12,8 @@
     display: table-row;
     font-size: 16px;
     font-weight: 500;
-    background-color: #e5e9f1;
+    background-color: #2a97eb;
+    color: #fff;
 
     > div {
       display: table-cell;
@@ -28,6 +33,11 @@
       vertical-align: middle;
     }
   }
+
+  .c-users-list__body:nth-child(odd) {
+    background: -webkit-linear-gradient(90deg,  transparent 0px, transparent 1px, #edeff0 1px, #edeff0 100%);
+    background: linear-gradient(0deg,  transparent 0px, transparent 1px, #edeff0 1px, #edeff0 100%);
+    }
 
   .c-users-list__avatar {
     width: 32px;
