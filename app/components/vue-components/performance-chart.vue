@@ -58,7 +58,11 @@ export default {
           transitionDuration: 0,
           confine: false,
           hideDelay: 0,
-          padding: 0,
+          padding: 10,
+          backgroundColor: "#100d29",
+          textStyle: {
+            color: "#fff",
+          },
         },
         grid: {
           left: "30px",
@@ -71,6 +75,7 @@ export default {
           type: "category",
           showGrid: false,
           data: this.xAxisData,
+          nameLocation: "center",
           axisLine: {
             show: true,
           },
@@ -86,13 +91,39 @@ export default {
           axisTick: { show: true },
           splitLine: { show: true },
         },
+        visualMap: {
+          top: 50,
+          right: 10,
+          pieces: [
+            {
+              min: 80,
+              max: 100,
+              color: "green",
+              label: "80 - 100",
+            },
+            {
+              min: 50,
+              max: 80,
+              color: "yellow",
+              label: "50 - 80",
+            },
+            {
+              min: 0,
+              max: 50,
+              color: "red",
+              label: "0 - 50",
+            },
+          ],
+        },
         series: [
           {
+            name: "Team Performance Index : ",
             data: this.yAxisData,
             type: "line",
             symbol: "circle",
             symbolSize: 2,
             cursor: "default",
+            align: "center",
             lineStyle: {
               width: 2,
             },

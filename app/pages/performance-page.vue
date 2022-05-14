@@ -21,10 +21,10 @@ export default {
     ChartFilter,
   },
   created() {
-    this.$store.dispatch("getChartData").then((res) => console.log(res));
+    this.$store.dispatch("getChartData");
   },
   computed: {
-    ...mapGetters(["filteredData", "startDate", "endDate"]),
+    ...mapGetters(["filteredData"]),
   },
   methods: {
     filterChart(filterQuery) {
