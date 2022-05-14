@@ -1,7 +1,8 @@
 <template>
   <div>
-    <span>Start date : </span>
+    <label for="startDate">Start date : </label>
     <input
+      id="startDate"
       type="date"
       v-model="filterQuery.startFilterDate"
       :min="dateRange.startDate"
@@ -9,12 +10,14 @@
       @change="filterChart"
     />
 
-    <span>End date : </span>
+    <label for="endDate">End date : </label>
     <input
+      id="endDate"
       type="date"
       v-model="filterQuery.endFilterDate"
       :min="dateRange.startDate"
       :max="dateRange.endDate"
+      :disabled="filterQuery.startFilterDate > filterQuery.endFilterDate"
       @change="filterChart"
     />
   </div>
@@ -29,8 +32,8 @@ export default {
   data() {
     return {
       filterQuery: {
-        startFilterDate: this.$store.getters.startDate,
-        endFilterDate: this.$store.getters.endDate,
+        startFilterDate: this.formatDate(this.$store.getters.startDate),
+        endFilterDate: this.formatDate(this.$store.getters.endDate),
       },
     };
   },
