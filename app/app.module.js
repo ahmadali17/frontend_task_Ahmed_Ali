@@ -4,12 +4,19 @@ import 'ngVue/build/plugins.js';
 import PerformancePageComponent from './pages/performance-page.vue';
 import PerformanceChartComponent from './components/vue-components/performance-chart.vue';
 import SearchComponent from './components/vue-components/Search.vue';
+import store from './store/store.js';
 
 angular.module('appModule', [
   'ui.router',
   'ngVue',
   'ngVue.plugins',
 ]);
+
+angular.module('appModule').config(($ngVueProvider) => {
+  $ngVueProvider.setRootVueInstanceProps({
+    store: store,
+  });
+});
 
 angular.module('appModule').directive('vPerformancePage', (createVueComponent) => {
   return createVueComponent(Vue.component('performancePageComponent', PerformancePageComponent));
