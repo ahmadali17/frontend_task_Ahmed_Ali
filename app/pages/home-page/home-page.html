@@ -6,6 +6,9 @@
   <employees-list employees-list="homePageVm.employees" search-keyword="homePageVm.keyword"></employees-list>
 
   <div class="c-dashboard__footer">
-    <button class="c-button">Load More</button>
+    <button class="c-button" ng-click="homePageVm.loadMoreEmployees()" ng-disabled="homePageVm.loading" ng-hide="homePageVm.hideLoadBtn">
+      <span ng-hide="homePageVm.loading" >Load More</span>
+      <span ng-hide="!homePageVm.loading">loading...</span>
+    </button>
   </div>
 </div>
